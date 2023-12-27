@@ -1,4 +1,4 @@
-import comp from './home_page'
-import menu from './menu'
-//comp()
-menu()
+import loadPage from "./page_load";
+
+loadPage()
+

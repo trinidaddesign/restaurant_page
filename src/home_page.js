@@ -1,9 +1,10 @@
 import './style.css';
 import Godzilla from './images/godzilla.jpg'
 
-export default function comp(){
+export default function homePage(){
     const contentElement = document.querySelector('#content')
     const pageContent = document.createElement('div')
+    pageContent.classList.add('page_content')
    
 
     const header = document.createElement('h1')
