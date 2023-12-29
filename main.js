@@ -98,19 +98,23 @@ function homePage(){
     const contentElement = document.querySelector('#content')
     const pageContent = document.createElement('div')
     pageContent.classList.add('page_content')
-   
+    pageContent.setAttribute('id','home_page')
+
 
     const header = document.createElement('h1')
+    header.classList.add('menu_header')
     header.textContent = 'Welcome to Godzilla pizza'
     pageContent.appendChild(header)
 
     const image = document.createElement('img')
+    image.classList.add('godzilla_home_image')
     image.src = _images_godzilla_jpg__WEBPACK_IMPORTED_MODULE_1__
     image.height = '300'
     image.width = '300'
     pageContent.appendChild(image)
 
     const pElm = document.createElement('p')
+    pElm.classList.add('home_p')
     pElm.textContent = 'At Godzilla Pizza we crush taste buds like buildings'
     pageContent.appendChild(pElm)
 
@@ -437,32 +441,72 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
     box-sizing: border-box;
 }
 
+#content{
+    height: 100dvh;
+    width: 100dvw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr;
+}
+
+/*tabs*/
+.tab_container{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    grid-area: 1/1/2/2;
+    background-color: #3b7c4f;
+}
+
+.tab{
+    display: flex;
+    height: 30px;
+    width: 50px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab:hover{
+    cursor: pointer;
+    background-color: #6c0e23;
+    color: black;
+}
+/*home page*/
+#home_page{
+    grid-area: 2/1/3/2;
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: 100px 400px 50px;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.menu_header{
+    grid-area: 1/2/2/3;
+}
+
+.godzilla_home_image{
+    grid-area: 2/2/3/3;
+    margin-top: 40px;
+}
+
+.home_p{
+    grid-area: 3/2/4/3;
+}
+
+
+/*menu*/
 .button_div {
     border: 1px solid black;
     height: 50px;
     width: 200px;
 }
-
-.tab_container{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    border: 1px solid red;
-}
-
-.tab{
-    height: 30px;
-    width: 50px;
-    border: 1px solid black;
-}
-
-.tab:hover{
-    cursor: pointer;
-    background-color: red;
-    color: black;
-}`, ""]);
+/*contact us*/`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -591,6 +635,7 @@ function menu(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
     pageContent.classList.add('page_content')
+    pageContent.setAttribute('id','menu')
 
     const image = document.createElement('img')
     image.src = _images_pizza_1_jpeg__WEBPACK_IMPORTED_MODULE_0__
@@ -626,12 +671,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ contact)
 /* harmony export */ });
 /* harmony import */ var _images_pizza_outside_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+
 
 
 function contact(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
     pageContent.classList.add('page_content')
+    pageContent.setAttribute('id', 'contact')
 
     const header = document.createElement('h1')
     header.textContent = "Contact us for delivery or pick up"
