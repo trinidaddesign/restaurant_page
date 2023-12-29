@@ -6,6 +6,7 @@ export default function menu(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
     pageContent.classList.add('page_content')
+    pageContent.setAttribute('id','menu')
 
     const image = document.createElement('img')
     image.src = pizza_1

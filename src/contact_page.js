@@ -1,9 +1,11 @@
 import pizza_outside from './images/pizza_outside.jpg'
+import './style.css'
 
 export default function contact(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
     pageContent.classList.add('page_content')
+    pageContent.setAttribute('id', 'contact')
 
     const header = document.createElement('h1')
     header.textContent = "Contact us for delivery or pick up"
