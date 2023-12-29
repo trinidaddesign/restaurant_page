@@ -10,7 +10,7 @@ export default function homePage(){
 
     const header = document.createElement('h1')
     header.classList.add('menu_header')
-    header.textContent = 'Welcome to Godzilla pizza'
+    header.textContent = 'Welcome to Godzilla Pizza'
     pageContent.appendChild(header)
 
     const image = document.createElement('img')
