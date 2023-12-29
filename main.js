@@ -29,7 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _contact_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
+/* harmony import */ var _contact_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(19);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
@@ -103,7 +103,7 @@ function homePage(){
 
     const header = document.createElement('h1')
     header.classList.add('menu_header')
-    header.textContent = 'Welcome to Godzilla pizza'
+    header.textContent = 'Welcome to Godzilla Pizza'
     pageContent.appendChild(header)
 
     const image = document.createElement('img')
@@ -501,9 +501,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
 
 
 /*menu*/
-.button_div {
+#menu{
+    grid-area: 2/1/3/2;
+}
+.order_button {
     border: 1px solid black;
-    height: 50px;
+    height: 20px;
     width: 200px;
 }
 /*contact us*/`, ""]);
@@ -626,35 +629,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ menu)
 /* harmony export */ });
 /* harmony import */ var _images_pizza_1_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _images_pizza_2_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
+/* harmony import */ var _images_pizza_3_jpeg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 
 
 
 
-function menu(){
+
+const itemArray = [
+    {
+        name:'pizza1',
+        image: _images_pizza_1_jpeg__WEBPACK_IMPORTED_MODULE_0__,
+        description: 'a simple pizza',
+        price: '$12'
+    },
+    {
+        name: 'pizza2',
+        image: _images_pizza_2_jpeg__WEBPACK_IMPORTED_MODULE_1__,
+        description: 'another simple pizza',
+        price: '$14'
+    },
+    {
+        name: 'pizza3',
+        image: _images_pizza_3_jpeg__WEBPACK_IMPORTED_MODULE_2__,
+        description: 'tasty pizza 3',
+        price: '$10'
+    },
+
+]
+
+function createMenuItemDiv(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
     pageContent.classList.add('page_content')
     pageContent.setAttribute('id','menu')
-
-    const image = document.createElement('img')
-    image.src = _images_pizza_1_jpeg__WEBPACK_IMPORTED_MODULE_0__
-    image.height = '300'
-    image.width = '300'
-    pageContent.appendChild(image)
-
-    const orderDiv = document.createElement('div')
-    orderDiv.classList.add('button_div')
-    orderDiv.textContent = "Order Now"
-    pageContent.appendChild(orderDiv)
-    orderDiv.addEventListener('click', () => {
-        alert('clicked')
-    })
     
+    itemArray.forEach((item) => {
+        const itemDiv = document.createElement('div')
+        itemDiv.classList.add('item_div')
 
+        const itemImage = document.createElement('img')
+        itemImage.src = item.image
+        itemDiv.appendChild(itemImage)
+
+        const itemName = document.createElement('h3')
+        itemName.textContent = item.name
+        itemDiv.appendChild(itemName)
+
+        const itemDescription = document.createElement('p')
+        itemDescription.textContent = item.description
+        itemDiv.appendChild(itemDescription)
+
+        const itemPrice = document.createElement('p')
+        itemPrice.classList.add('price_p_element')
+        itemPrice.textContent = item.price
+        itemDiv.appendChild(itemPrice)
+
+        const orderBtn = document.createElement('button')
+        orderBtn.classList.add('order_button')
+        orderBtn.innerHTML = 'Order Me!'
+        orderBtn.addEventListener('click', ()=>{
+            alert('yo')
+        })
+        itemDiv.appendChild(orderBtn)
+
+        pageContent.appendChild(itemDiv)
+    })
 
     content.appendChild(pageContent)
 }
+
+function menu(){
+    createMenuItemDiv()
+} 
 
 /***/ }),
 /* 16 */
@@ -664,13 +712,25 @@ module.exports = __webpack_require__.p + "e304a2a34c5fe8ba562b.jpeg";
 
 /***/ }),
 /* 17 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "1264132b4b9c464b1c6c.jpeg";
+
+/***/ }),
+/* 18 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "3a9560a8a165662debe5.jpeg";
+
+/***/ }),
+/* 19 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ contact)
 /* harmony export */ });
-/* harmony import */ var _images_pizza_outside_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+/* harmony import */ var _images_pizza_outside_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 
 
@@ -695,7 +755,7 @@ function contact(){
 }
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "805621b14ca313d9457e.jpg";
