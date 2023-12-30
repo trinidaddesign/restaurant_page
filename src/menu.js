@@ -1,29 +1,6 @@
-import pizzaOne from './images/pizza_1.jpeg'
-import pizzaTwo from './images/pizza_2.jpeg'
-import pizzaThree from './images/pizza_3.jpeg'
+import itemArray from './item_array'
 import './style.css'
 
-const itemArray = [
-    {
-        name:'pizza1',
-        image: pizzaOne,
-        description: 'a simple pizza',
-        price: '$12'
-    },
-    {
-        name: 'pizza2',
-        image: pizzaTwo,
-        description: 'another simple pizza',
-        price: '$14'
-    },
-    {
-        name: 'pizza3',
-        image: pizzaThree,
-        description: 'tasty pizza 3',
-        price: '$10'
-    },
-
-]
 
 function createMenuItemDiv(){
     const content = document.querySelector('#content')
@@ -31,19 +8,22 @@ function createMenuItemDiv(){
     pageContent.classList.add('page_content')
     pageContent.setAttribute('id','menu')
     
-    itemArray.forEach((item) => {
+    const itemDivObj = itemArray.forEach((item) => {
         const itemDiv = document.createElement('div')
         itemDiv.classList.add('item_div')
 
         const itemImage = document.createElement('img')
+        itemImage.classList.add('menu_image')
         itemImage.src = item.image
         itemDiv.appendChild(itemImage)
 
         const itemName = document.createElement('h3')
+        itemName.classList.add('menu_h3')
         itemName.textContent = item.name
         itemDiv.appendChild(itemName)
 
         const itemDescription = document.createElement('p')
+        itemDescription.classList.add('description_p_element')
         itemDescription.textContent = item.description
         itemDiv.appendChild(itemDescription)
 
@@ -61,9 +41,10 @@ function createMenuItemDiv(){
         itemDiv.appendChild(orderBtn)
 
         pageContent.appendChild(itemDiv)
+        content.appendChild(pageContent)
     })
 
-    content.appendChild(pageContent)
+    return {itemDivObj}
 }
 
 export default function menu(){
