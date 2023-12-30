@@ -101,16 +101,17 @@ function homePage(){
     pageContent.setAttribute('id','home_page')
 
 
-    const header = document.createElement('h1')
-    header.classList.add('home_header')
-    header.textContent = 'Welcome to Godzilla Pizza'
+    const header = document.createElement('div')
+    header.classList.add('home_header_div')
+    const headerHone = document.createElement('h1')
+    headerHone.classList.add('home_header_h1')
+    headerHone.textContent = 'Welcome to Godzilla Pizza'
+    header.appendChild(headerHone)
     pageContent.appendChild(header)
 
     const image = document.createElement('img')
     image.classList.add('godzilla_home_image')
     image.src = _images_godzilla_jpg__WEBPACK_IMPORTED_MODULE_1__
-    image.height = '300'
-    image.width = '300'
     pageContent.appendChild(image)
 
     const pElm = document.createElement('p')
@@ -452,13 +453,16 @@ body{
 }
 
 #content{
-    height: 100dvh;
-    width: 100dvw;
+    height: 100%;
+    width: 100%;
     display: grid;
     row-gap: .5px;
     grid-template-columns: 1fr;
     grid-template-rows: 40px 1fr;
     background-color: var(--main-bg-color) ;
+}
+.page_content{
+    width: 100%;
 }
 
 /*tabs*/
@@ -493,7 +497,7 @@ body{
 #home_page{
     grid-area: 2/1/3/2;
     display: grid;
-    grid-template-columns: 10px 1fr 10px;
+    grid-template-columns: 5px 1fr 5px;
     grid-template-rows: 100px 400px 50px;
     justify-items: center;
     align-content: center;
@@ -501,13 +505,18 @@ body{
     text-wrap: wrap;
 }
 
-.home_header{
+.home_header_div{
     grid-area: 1/2/2/3;
+    height: fit-content;
+    width: fit-content;
+    text-wrap: pretty;
+    border-bottom: 5px solid black;
 }
 
 .godzilla_home_image{
     grid-area: 2/2/3/3;
-    margin-top: 40px;
+    height: 100%;
+    width: 100%;
 }
 
 .home_p{

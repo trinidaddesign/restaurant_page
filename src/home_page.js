@@ -8,16 +8,17 @@ export default function homePage(){
     pageContent.setAttribute('id','home_page')
 
 
-    const header = document.createElement('h1')
-    header.classList.add('menu_header')
-    header.textContent = 'Welcome to Godzilla Pizza'
+    const header = document.createElement('div')
+    header.classList.add('home_header_div')
+    const headerHone = document.createElement('h1')
+    headerHone.classList.add('home_header_h1')
+    headerHone.textContent = 'Welcome to Godzilla Pizza'
+    header.appendChild(headerHone)
     pageContent.appendChild(header)
 
     const image = document.createElement('img')
     image.classList.add('godzilla_home_image')
     image.src = Godzilla
-    image.height = '300'
-    image.width = '300'
     pageContent.appendChild(image)
 
     const pElm = document.createElement('p')
