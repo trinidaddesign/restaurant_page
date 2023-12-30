@@ -43,7 +43,7 @@ body{
 .tab{
     display: flex;
     height: 30px;
-    width: 50px;
+    width: fit-content;
     border: 1px solid #b7efc5;
     color:#b7efc5 ;
     justify-content: center;
