@@ -102,7 +102,7 @@ function homePage(){
 
 
     const header = document.createElement('h1')
-    header.classList.add('menu_header')
+    header.classList.add('home_header')
     header.textContent = 'Welcome to Godzilla Pizza'
     pageContent.appendChild(header)
 
@@ -440,6 +440,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --main-bg-color: #2dc653;
+    --tab-color: #10451d;
+}
 body{
     display: grid;
     height: 100dvh;
@@ -450,8 +455,10 @@ body{
     height: 100dvh;
     width: 100dvw;
     display: grid;
+    row-gap: .5px;
     grid-template-columns: 1fr;
     grid-template-rows: 40px 1fr;
+    background-color: var(--main-bg-color) ;
 }
 
 /*tabs*/
@@ -462,14 +469,15 @@ body{
     align-items: center;
     height: 40px;
     grid-area: 1/1/2/2;
-    background-color: #3b7c4f;
+    background-color: var(--tab-color);
 }
 
 .tab{
     display: flex;
     height: 30px;
     width: 50px;
-    border: 1px solid black;
+    border: 1px solid #b7efc5;
+    color:#b7efc5 ;
     justify-content: center;
     align-items: center;
 }
@@ -478,6 +486,8 @@ body{
     cursor: pointer;
     background-color: #6c0e23;
     color: black;
+    border: 1px solid black;
+    text-decoration: underline;
 }
 /*home page*/
 #home_page{
@@ -491,7 +501,7 @@ body{
     text-wrap: wrap;
 }
 
-.menu_header{
+.home_header{
     grid-area: 1/2/2/3;
 }
 
@@ -508,16 +518,29 @@ body{
 /*menu*/
 #menu{
     grid-area: 2/1/3/2;
+    overflow-y: scroll;
 }
 
 .menu_image{
     height: 200px;
-    width: 250px;
+    width: 300px;
 }
 .order_button {
     border: 1px solid black;
     height: 20px;
     width: 200px;
+    border-radius: 5px;
+}
+
+.item_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+    text-wrap: balance;
 }
 /*contact us*/`, ""]);
 // Exports
