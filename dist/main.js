@@ -443,8 +443,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `
 }
 
 :root{
-    --main-bg-color: #2dc653;
-    --tab-color: #10451d;
+    --main-bg-color:#1a7431;
+    --tab-color: #2dc653;
 }
 body{
     display: grid;
@@ -456,13 +456,13 @@ body{
     height: 100%;
     width: 100%;
     display: grid;
-    row-gap: .5px;
     grid-template-columns: 1fr;
     grid-template-rows: 40px 1fr;
-    background-color: var(--main-bg-color) ;
+    background: linear-gradient(var(--tab-color), var(--main-bg-color))
 }
 .page_content{
     width: 100%;
+    background-attachment: scroll;
 }
 
 /*tabs*/
@@ -473,15 +473,17 @@ body{
     align-items: center;
     height: 40px;
     grid-area: 1/1/2/2;
-    background-color: var(--tab-color);
+    position: sticky;
+    top: 0%;
 }
 
 .tab{
     display: flex;
     height: 30px;
     width: 50px;
-    border: 1px solid #b7efc5;
-    color:#b7efc5 ;
+    background-color: var(--tab-color);
+    border: 1px solid black;
+    color: black ;
     justify-content: center;
     align-items: center;
 }
@@ -530,10 +532,12 @@ body{
     overflow-y: scroll;
 }
 
+
 .menu_image{
     height: 200px;
     width: 300px;
 }
+
 .order_button {
     border: 1px solid black;
     height: 20px;
@@ -547,10 +551,12 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: 5px;
     margin-bottom: 5px;
     text-align: center;
     text-wrap: balance;
 }
+
 /*contact us*/`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -675,7 +681,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+function expandDescription(x){
+    x.addEventListener('click', ()=>{
+        alert('yo')
+    })
+}
 function createMenuItemDiv(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
@@ -689,6 +699,7 @@ function createMenuItemDiv(){
         const itemImage = document.createElement('img')
         itemImage.classList.add('menu_image')
         itemImage.src = item.image
+        expandDescription(itemImage)
         itemDiv.appendChild(itemImage)
 
         const itemName = document.createElement('h3')
@@ -709,9 +720,7 @@ function createMenuItemDiv(){
         const orderBtn = document.createElement('button')
         orderBtn.classList.add('order_button')
         orderBtn.innerHTML = 'Order Me!'
-        orderBtn.addEventListener('click', ()=>{
-            alert('yo')
-        })
+        expandDescription(orderBtn)
         itemDiv.appendChild(orderBtn)
 
         pageContent.appendChild(itemDiv)
@@ -764,6 +773,12 @@ const itemArray = [
         image: _images_pizza_1_jpeg__WEBPACK_IMPORTED_MODULE_0__,
         description: 'buy more fucker, BUY BUY FUCK YOU BUY SPEND FUCK YOU',
         price: 'cock'
+    },
+    {
+        name: 'pizza5',
+        image: _images_pizza_3_jpeg__WEBPACK_IMPORTED_MODULE_2__,
+        description: "it's definitely not dog shit so",
+        price: '16'
     },
 
 ]

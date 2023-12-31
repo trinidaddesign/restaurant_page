@@ -1,7 +1,11 @@
 import itemArray from './item_array'
 import './style.css'
 
-
+function expandDescription(x){
+    x.addEventListener('click', ()=>{
+        alert('yo')
+    })
+}
 function createMenuItemDiv(){
     const content = document.querySelector('#content')
     const pageContent = document.createElement('div')
@@ -15,6 +19,7 @@ function createMenuItemDiv(){
         const itemImage = document.createElement('img')
         itemImage.classList.add('menu_image')
         itemImage.src = item.image
+        expandDescription(itemImage)
         itemDiv.appendChild(itemImage)
 
         const itemName = document.createElement('h3')
@@ -35,9 +40,7 @@ function createMenuItemDiv(){
         const orderBtn = document.createElement('button')
         orderBtn.classList.add('order_button')
         orderBtn.innerHTML = 'Order Me!'
-        orderBtn.addEventListener('click', ()=>{
-            alert('yo')
-        })
+        expandDescription(orderBtn)
         itemDiv.appendChild(orderBtn)
 
         pageContent.appendChild(itemDiv)

@@ -27,6 +27,12 @@ const itemArray = [
         description: 'buy more fucker, BUY BUY FUCK YOU BUY SPEND FUCK YOU',
         price: 'cock'
     },
+    {
+        name: 'pizza5',
+        image: pizzaThree,
+        description: "it's definitely not dog shit so",
+        price: '16'
+    },
 
 ]
 

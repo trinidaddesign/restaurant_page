@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +5,8 @@
 }
 
 :root{
-    --main-bg-color: #2dc653;
-    --tab-color: #10451d;
+    --main-bg-color:#1a7431;
+    --tab-color: #2dc653;
 }
 body{
     display: grid;
@@ -20,13 +18,13 @@ body{
     height: 100%;
     width: 100%;
     display: grid;
-    row-gap: .5px;
     grid-template-columns: 1fr;
     grid-template-rows: 40px 1fr;
-    background-color: var(--main-bg-color) ;
+    background: linear-gradient(var(--tab-color), var(--main-bg-color))
 }
 .page_content{
     width: 100%;
+    background-attachment: scroll;
 }
 
 /*tabs*/
@@ -37,15 +35,17 @@ body{
     align-items: center;
     height: 40px;
     grid-area: 1/1/2/2;
-    background-color: var(--tab-color);
+    position: sticky;
+    top: 0%;
 }
 
 .tab{
     display: flex;
     height: 30px;
-    width: fit-content;
-    border: 1px solid #b7efc5;
-    color:#b7efc5 ;
+    width: 50px;
+    background-color: var(--tab-color);
+    border: 1px solid black;
+    color: black ;
     justify-content: center;
     align-items: center;
 }
@@ -94,10 +94,12 @@ body{
     overflow-y: scroll;
 }
 
+
 .menu_image{
     height: 200px;
     width: 300px;
 }
+
 .order_button {
     border: 1px solid black;
     height: 20px;
@@ -111,8 +113,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: 5px;
     margin-bottom: 5px;
     text-align: center;
     text-wrap: balance;
 }
+
 /*contact us*/
