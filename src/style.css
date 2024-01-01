@@ -31,7 +31,9 @@ body{
 .tab_container{
     display: inline-flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
     align-items: center;
     height: 40px;
     grid-area: 1/1/2/2;
@@ -42,7 +44,7 @@ body{
 .tab{
     display: flex;
     height: 30px;
-    width: 50px;
+    width: max-content;
     background-color: var(--tab-color);
     border: 1px solid black;
     color: black ;
@@ -120,3 +122,9 @@ body{
 }
 
 /*contact us*/
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
