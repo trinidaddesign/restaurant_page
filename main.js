@@ -434,9 +434,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `
-
-* {
+___CSS_LOADER_EXPORT___.push([module.id, `* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -469,7 +467,9 @@ body{
 .tab_container{
     display: inline-flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
     align-items: center;
     height: 40px;
     grid-area: 1/1/2/2;
@@ -480,7 +480,7 @@ body{
 .tab{
     display: flex;
     height: 30px;
-    width: 50px;
+    width: max-content;
     background-color: var(--tab-color);
     border: 1px solid black;
     color: black ;
@@ -557,7 +557,13 @@ body{
     text-wrap: balance;
 }
 
-/*contact us*/`, ""]);
+/*contact us*/
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}`, ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -812,7 +818,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ contact)
 /* harmony export */ });
 /* harmony import */ var _images_pizza_outside_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _images_tokyo_map_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+
 
 
 
@@ -826,11 +834,31 @@ function contact(){
     header.textContent = "Contact us for delivery or pick up"
     pageContent.appendChild(header)
 
+    const phoneLinkDiv = document.createElement('div')
+    phoneLinkDiv.classList.add('phone_link_div')
+    const phoneNumber = document.createElement('a')
+    phoneNumber.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    phoneNumber.textContent = '817-666-1234'
+    phoneLinkDiv.appendChild(phoneNumber)
+    pageContent.appendChild(phoneLinkDiv)
+
+    const buildingDiv = document.createElement('div')
+    buildingDiv.classList.add('building_image')
     const image = document.createElement('img')
     image.src = _images_pizza_outside_jpg__WEBPACK_IMPORTED_MODULE_0__
     image.height = '300'
     image.width = '300'
-    pageContent.appendChild(image)
+    buildingDiv.appendChild(image)
+    pageContent.appendChild(buildingDiv)
+
+    const mapDiv = document.createElement('div')
+    mapDiv.classList.add('map_div')
+    const mapImage = document.createElement('img')
+    mapImage.src = _images_tokyo_map_jpeg__WEBPACK_IMPORTED_MODULE_1__
+    mapImage.height = '300'
+    mapImage.width = '300'
+    mapDiv.appendChild(mapImage)
+    pageContent.appendChild(mapDiv)
 
     content.appendChild(pageContent)
 }
@@ -840,6 +868,12 @@ function contact(){
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "805621b14ca313d9457e.jpg";
+
+/***/ }),
+/* 22 */
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "55ccc334d3ab311845d5.jpeg";
 
 /***/ })
 /******/ 	]);
